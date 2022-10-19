@@ -1,0 +1,7 @@
+from picamera import picamera
+from time import sleep
+cam=picamera()
+cam.start_preview()
+sleep(0.5)
+cam.capture('/home/pi/deck.jpg')
+cam.stop_preview()

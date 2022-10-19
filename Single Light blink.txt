@@ -1,0 +1,23 @@
+mport RPi.GPIO as GPIO 
+import time 
+GPIO.setmode(GPIO.BCM) 
+GPIO.setwarnings(False) 
+GPIO.setup(20,GPIO.OUT) 
+GPIO.setup(21,GPIO.OUT)
+ist=[20,21] 
+
+print ('Press q to exit')
+try:
+ 
+while True: 
+for num in range(len(list)): 
+GPIO.output(list[num],GPIO.HIGH) 
+time.sleep(0.5) 
+GPIO.output(list[num],GPIO.LOW) 
+time.sleep(0.5)
+ 
+except KeyboardInterrupt: 
+pass 
+GPIO.output(20,GPIO.LOW) 
+GPIO.output(21,GPIO.LOW) 
+GPIO.cleanup() 

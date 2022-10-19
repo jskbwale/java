@@ -1,0 +1,32 @@
+import RPi.GPIO.PIO;
+import time
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(20,GPIO.OUT)
+GPIO.setup(21,GPIO.OUT)
+
+print ('Press q to exit'
+
+p1= GPIO.PWM(20,50)
+p2=GPIO.PWM(21,50)
+p1.start(0)
+p2.start(0)
+try:
+while True:
+for dc in range(0,101,5):
+p1.ChangeDutyCycle(dc)
+p2.ChangeDutyCycle(dc)
+time.Sleep(0.025)
+
+for dc in range(100,-1,-5):
+p1.ChangeDutyCycle(dc)
+p2.ChangeDutyCycle(dc)
+time.sleep(0.025)
+
+except keyboardInterrupt:
+pass
+p1.stop()
+p2.stop()
+GPIO.setup(20,GPIO.LOW)
+GPIO.setup(21,GPIO.LOW)
+GPIO.cleanup()
